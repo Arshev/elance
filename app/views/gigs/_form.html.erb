@@ -1,0 +1,53 @@
+<%= form_for @gig do |f| %>
+  <% if @gig.errors.any?%>
+    <div class="error_explanation">
+      <h2><%= pluralize(@gig.errors.count, "error")%> prohibited this Job from being saved:</h2>
+      <ul>
+        <% @gig.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <%= f.label :name, "Job Name:", class: "blue" %>
+        <%= f.text_field :name, class: "form-control input-lg" %>
+        <small class="help-block">Name of your job</small>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <%= f.label :budget, "Budget:", class: "blue"%>
+        <%= f.text_field :budget, class: "form-control input-lg" %>
+        <small class="help-block">Ex: U$1,000</small>
+      </div>
+    </div>
+  </div> <!-- end first row -->
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <%= f.label :location, "Location:", class: "blue" %>
+        <%= f.text_field :location, class: "form-control input-lg" %>
+        <small class="help-block">(Denver, San Francisco, Remote, etc..)</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <%= f.label :description, "Description", class: "blue" %>
+        <%= f.text_area :description, class: "form-control", rows: 10 %>
+        <small class="help-block">Tell us everything about you Job Vacancy (Website, virtual assistant, etc...)</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="">
+        <%= f.submit "Create Job", class:"btn btn-primary input-lg"%>
+      </div>
+    </div>
+  </div>
+<% end %>

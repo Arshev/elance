@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712170938) do
+ActiveRecord::Schema.define(version: 20170712171220) do
 
   create_table "abilities", force: :cascade do |t|
     t.integer "gig_id"
@@ -33,7 +33,9 @@ ActiveRecord::Schema.define(version: 20170712170938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.integer "user_id"
     t.index ["category_id"], name: "index_gigs_on_category_id"
+    t.index ["user_id"], name: "index_gigs_on_user_id"
   end
 
   create_table "proposals", force: :cascade do |t|
@@ -42,7 +44,9 @@ ActiveRecord::Schema.define(version: 20170712170938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "gig_id"
+    t.integer "user_id"
     t.index ["gig_id"], name: "index_proposals_on_gig_id"
+    t.index ["user_id"], name: "index_proposals_on_user_id"
   end
 
   create_table "skills", force: :cascade do |t|

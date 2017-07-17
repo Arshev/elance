@@ -1,7 +1,7 @@
 class GigsController < ApplicationController
 
   def index
-
+    @gigs = Gig.all.order("created_at DESC")
   end
 
   def new

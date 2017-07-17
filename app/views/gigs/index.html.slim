@@ -1,0 +1,12 @@
+= render "shared/search"
+= render "shared/main"
+div class="col-xs-12 col-md-9"
+  h3.sub-heading Featured jobs
+  table class="table table-striped"
+    tbody
+      - @gigs.each do |gig|
+        tr
+          td
+            p 
+              = link_to gig.name , gig  
+              small class="label label-success"  Full time

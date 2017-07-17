@@ -1,0 +1,16 @@
+.contents
+  section id="job"
+    .container
+      .row
+        .col-xs-12 
+          .col-md-9
+            h3.sub-heading = gig.name
+            p
+              i.glyphicon
+                .glyphicon-calendar
+                  = @gig.created_at.strftime("%d %m, %Y")
+            p = gig.description
+            p = gig.budget
+            p = gig.location
+            p = gig.open?
+            p = gig.awarded_proposal
